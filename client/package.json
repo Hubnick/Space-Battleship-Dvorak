@@ -4,9 +4,13 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "antd": "3.5.3",
+    "delay": "2.0.0",
+    "lodash": "4.17.5",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "react-spring": "^6.1.6"
   },
   "scripts": {
     "start": "react-scripts start",
