@@ -2,7 +2,7 @@ import React from 'react'
 import { Spring, Keyframes, animated } from 'react-spring'
 import delay from 'delay'
 
-const TRIANGLE = 'M20,0 L380,380 L380,380 L200,20 L20,380 Z'
+const SHIP = 'M20,0 L380,380 L380,380 L200,20 L20,380 Z'
 const DOT = 'M20,20 L20,80 L80,80 L80,20 L20,20 Z'
 const styles = {
   container: {
@@ -12,25 +12,28 @@ const styles = {
     alignItems: 'center',
     willChange: 'background',
   },
-  shape: { width: 200, height: 600, willChange: 'transform' },
+  shape: { width: 200, height: 800, willChange: 'transform' },
 }
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
     await next({
-      from: { radians: -1200, radiansBig: -800, shift: '#247BA0'},
-      to: { radians: 900, radiansBig: 650, shift: 'rgb(219, 112, 148)'},
+      from: { radians: -1500, radiansBig: -1000, shift: '#f4893b', value: 0},
+      to: { radians: 1245, radiansBig: 635, shift: '#6d2a24', value: 100},
     })
   }
 })
 
 export default class Asteroid extends React.Component {
-  state = { destroy: true, }
+  state = { destroy: true, reset: false, value: undefined}
   destroy = () => this.setState(state => ({ destroy: !state.destroy }))
+  reset = () => this.setState(state => ({ reset: !state.reset }))
   render() {
     const destroy = this.state.destroy
+    const reset = this.state.reset
 
-    const Content = ({radians, radiansBig, shift}) =>
+    const Content = ({radians, radiansBig, shift, value}) =>
+    <div>
     <Spring
       from={{ color: 'rgb(219, 112, 148)' }}
       to={{
@@ -39,10 +42,13 @@ export default class Asteroid extends React.Component {
         start: destroy ? '#B2DBBF' : '#B2DBBF',
         end: destroy ? '#247BA0' : '#F3FFBD',
         scale: destroy ? 0.3 : 0.4,
-        shape: destroy ? TRIANGLE : DOT,
-        stop: destroy ? '0%' : '50%',
+        shape: destroy ? SHIP : DOT,
+        stop: destroy ? '85%' : '50%',
         rotation: destroy ? '0deg' : '60deg',
         opacity: destroy ? '1' : '0',
+      }}
+      after={{
+        value: 99,
       }}>
       {({
         color,
@@ -59,7 +65,7 @@ export default class Asteroid extends React.Component {
         <div
           style={{
             ...styles.container,
-            background: `linear-gradient(to bottom, ${start} ${stop}, ${end} 100%)`,
+            backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")`,
             ...rest,
           }}>
           <animated.svg
@@ -130,8 +136,10 @@ export default class Asteroid extends React.Component {
           </animated.svg>
         </div>
       )}
-    </Spring>
 
+    </Spring>
+<button id="reset" onClick={this.reset, this.destroy}>RESET</button>
+</div>
     return (
       <div>
       <div
@@ -139,10 +147,10 @@ export default class Asteroid extends React.Component {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'top',
-          background: 'palevioletred',
+          background: `linear-gradient(to bottom, #091643 80%, #103467c2 100%)`,
         }}>
         <Container
-
+          reset
           native
           //impl={TimingAnimation}
           config={{ duration: 10000 /*, easing: Easing.linear*/ }}>
