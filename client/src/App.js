@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+//added import background video
+import BackgroundVideo from './BackgroundVideo.jsx';
+// added import Game.jsx
+import Game from './Game.jsx';
+// added button from reactstrap
+import { Button } from 'reactstrap';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={BackgroundVideo} />
+        <Route exact path="/game" component={Game} />
+        <Route component={BackgroundVideo} />
+      </Switch>
+    </div>
+  </Router>
+);
+
 
 export default App;
+
+// class App extends Component {
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <Game></Game>  
+//       </div>
+//     );
+//   }
+// }

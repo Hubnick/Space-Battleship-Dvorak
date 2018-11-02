@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  height: 100%;
+  
 }
 
 .App-logo {
@@ -30,3 +32,103 @@
     transform: rotate(360deg);
   }
 }
+
+.startGameButton{
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  margin-top: 150px;
+  color: red;   
+  border: 3px solid yellow;
+  border-radius: 15px;
+  width: 12%;
+  height: 45px;
+  background-color:rgba(255, 255, 0, 0.014) ;
+  font-size: 25px;
+  font-family: fantasy;
+  animation: 1s alternate infinite;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(http://fonts.gstatic.com/s/robotoslab/v7/BngMUXZYTXPIvIBgJJSb6ufN5qA.ttf) format('truetype');
+}
+
+html{
+  height: 100%;
+
+}
+
+body {
+  background-image: url('/bg5.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  height: 100%;
+}
+
+/* Full height game box */
+#root{
+  height: 100%;
+
+}
+.container{
+  height: 100%;
+}
+
+/* left game box view height */
+.h100{
+  height: 100vh;
+}
+
+/* Game box */
+.leftSide {
+  border: #282c34 4px solid;
+  background-color: whitesmoke;
+  /* background-image: url('/bg-right.jpeg'); */
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+}
+
+h1 {
+  color:red !important;
+  text-shadow: #2a2834 !important;
+  margin-top: 200px !important;
+}
+
+.logoImage {
+  position: relative;
+  top:45%;
+  left: 10%;
+  margin-top: 50px;
+
+}
+
+.keyboard {
+  margin-top: 25px;
+  position: relative;
+  top:10%;
+  left:18%;
+}
+
+#textTypedWord {
+  width: 80%;
+  height: 50px;
+  border: double;
+margin-left: 10%;
+  /* margin-top: -25px; */
+  font-size: 25px;
+  text-align: center;
+}
+
+
+#typedWord {
+  /* margin-top: -25px; */
+  font-size: 25px;
+
+}
+
+
