@@ -2,7 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Keyframes, animated } from 'react-spring'
 // import Timing from './timing'
-import Demo from './asteroid'
+import Asteroid from './customasteroid'
+// import SpringExample from './spring'
+// import Timing from './timing'
 
 class App extends React.PureComponent {
 
@@ -11,7 +13,7 @@ class App extends React.PureComponent {
     return (
       <div style={{ position: 'relative' }}>
       <h1>Game</h1>
-        <Demo state="close" onClick={this.toggle} />
+        <Asteroid id="demo" />
       </div>
     )
   }
