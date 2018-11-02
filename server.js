@@ -6,8 +6,13 @@ const mongoose = require('mongoose');
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/mern",
     {
+<<<<<<< Updated upstream
         useMongoClient: true
         
+=======
+        // useMongoClient: true
+        useNewUrlParser: true
+>>>>>>> Stashed changes
     }
 );
 
