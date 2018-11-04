@@ -25,15 +25,20 @@ class App extends Component {
     //(2)after constructor loads, set the first word
     componentDidMount(){
         this.setWord()
+        
     }
     
     setWord () {
         let setWord = this.levelsArray[this.state.currentlevel][this.state.currentChallenge];
-        console.log(setWord)
+        // console.log(setWord)
         this.setState({
             setWord: setWord
         })
-        // console.log(this.state.setWord)
+        console.log("setWord: " + this.state.setWord)
+        console.log("currentLevel: " + this.state.currentlevel)
+        console.log("currentChallenge: " + this.state.currentChallenge)
+
+
     }
     
     
