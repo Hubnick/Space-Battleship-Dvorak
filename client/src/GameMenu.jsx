@@ -67,14 +67,20 @@ class App extends Component {
         if (character === this.state.setWord){
             console.log("its true")
 
-            
 
 
 
+            let newChallenge = this.state.currentChallenge + 1
+            console.log('inputEvent-varnewChallenge-before-setState->',newChallenge)
+            this.setState({
+                currentChallenge:newChallenge
+            })
+            console.log('inputEvent-statecurrentChallenge-AfterSetState',this.state.currentChallenge)
+            console.log('inputEvent-newChallenge-aftersetSTate',newChallenge)
             //THIS needs fixed=============================
-            this.setState((prevState, props)=>({
-                currentChallenge: prevState.currentChallenge + 1
-            }))
+            // this.setState((prevState, props)=>({
+            //     currentChallenge: prevState.currentChallenge + 1
+            // }))
             this.setWord()
             // this.setGame()
         }
