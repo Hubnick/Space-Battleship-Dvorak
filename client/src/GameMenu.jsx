@@ -66,6 +66,12 @@ class App extends Component {
         console.log(e.target.value,character === this.state.setWord)
         if (character === this.state.setWord){
             console.log("its true")
+
+            
+
+
+
+            //THIS needs fixed=============================
             this.setState((prevState, props)=>({
                 currentChallenge: prevState.currentChallenge + 1
             }))
