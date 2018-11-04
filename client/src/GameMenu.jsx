@@ -2,55 +2,105 @@ import React, { Component } from 'react';
 import { Row, Col, CustomInput } from 'reactstrap';
 import './App.css';
 
+
+// var levelsArray = [
+//     ["Level 1", "a", "o", "e", "u", "i"],
+//     ["Level 2", "d", "h", "t", "n", "s"],
+//     ["Level 3", "a", "o", "e", "u", "i", "d", "h", "t", "n", "s"]
+// ]
+
+// var levelsArrayCount = 0
+
+// var wordArray = []
+
+// var wordArrayCount = 1
+
+// var word = null
+
+// var time = 5
+
+// var isPlaying
+
+// var statusinterval
+// var timeInterval
+
+
+
 class App extends Component {
-    levelsArray = [
-        ["Level 1", "a", "o", "e", "u", "i"],
-        ["Level 2", "d", "h", "t", "n", "s"],
-        ["Level 3", "a", "o", "e", "u", "i", "d", "h", "t", "n", "s"]
-    ]
-    levelsArrayCount = 0
+    // levelsArrayCount = 0
 
-    wordArray = []
+    // wordArray = []
 
-    wordArrayCount = 1
+    // wordArrayCount = 1
 
-    word = null
+    // word = null
 
-    time = 5
+    // time = 5
 
-    isPlaying
+    // isPlaying
 
-    statusinterval
-    timeInterval
+    // statusinterval
+    // timeInterval
 
 
-    state = {
-        typedWord: '',
-        levelsArray : [
+    // loadWordArray = function () {
+    //     wordArray = levelsArray[levelsArrayCount]
+    //     console.log(wordArray)
+    // }
+
+
+    // state = {
+
+
+    // }
+    constructor(props) {
+        super(props);
+        const levelsArray = [
             ["Level 1", "a", "o", "e", "u", "i"],
             ["Level 2", "d", "h", "t", "n", "s"],
             ["Level 3", "a", "o", "e", "u", "i", "d", "h", "t", "n", "s"]
-        ],
+        ]
 
-
-    firstLevel: levelsArray
-    }
-    constructor(props) {
-        super(props);
-        this.toggle = this.toggle.bind(this);
+        // this.toggle = this.toggle.bind(this);
         this.state = {
-            dropdownOpen: false
+            dropdownOpen: false,
+            typedWord: '',
+            currentWord: "string",
+            levelString: levelsArray[0][1],
+            word: levelsArray[0],
+            userInput: null,
+            wordPlus: 0
+
         };
     }
-    toggle() {
-        this.setState({
-            dropdownOpen: !this.state.dropdownOpen
-        });
-    }
+
+    // changeWord() {
+    //     this.setState({
+    //         word: "new word"
+    //     })
+    // }
+
+    // check() {
+    //     if (this.state.userInput === this.state.word) {
+    //         this.state.wordPlus: ++
+    // }
+    // }
+
+    //    changeWord()
+
+    // toggle() {
+    //     this.setState({
+    //         dropdownOpen: !this.state.dropdownOpen
+    //     });
+    // }
 
     setWord = (e) => {
-        this.setState({ typedWord: e.target.value })
+        // this.setState({ typedWord: e.target.value })
+        this.setState({ userInput: e.target.value })
+        // check();
     };
+
+
     render() {
         return (
             <div>
@@ -64,7 +114,7 @@ class App extends Component {
                     <Col>
                         {/* ================================================================= */}
                         {/* THIS IS WHERE THE CURRENT WORD NEEDS TO APPEAR */}
-                        <h1 id="typedWord" >{this.state.typedWord}&nbsp;</h1>
+                        <h1 id="typedWord" >{this.state.word}&nbsp;</h1>
                     </Col>
                 </Row>
                 <Row>
