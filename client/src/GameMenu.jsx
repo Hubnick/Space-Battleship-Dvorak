@@ -7,6 +7,8 @@ import { Row, Col, CustomInput, Input } from 'reactstrap';
 import './App.css';
 
 class App extends Component {
+    
+    //(1) constructor happens on page load, sets state variables
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
@@ -20,10 +22,26 @@ class App extends Component {
         
     }
 
-    
+    //(2)after constructor loads, set the first word
     componentDidMount(){
         this.setWord()
     }
+    
+    setWord () {
+        let setWord = this.levelsArray[this.state.currentlevel][this.state.currentChallenge];
+        console.log(setWord)
+        this.setState({
+            setWord: setWord
+        })
+        // console.log(this.state.setWord)
+    }
+    
+    
+    
+    
+    
+    
+    
     toggle() {
         this.setState({
             // dropdownOpen: !this.state.dropdownOpen
@@ -35,14 +53,7 @@ class App extends Component {
         ["a", "o", "e", "u", "i", "d", "h", "t", "n", "s"]
     ]
 
-    setWord () {
-        let x = this.levelsArray[this.state.currentlevel][this.state.currentChallenge];
-        console.log(x)
-        this.setState({
-            setWord: x
-        })
-        // console.log(this.state.setWord)
-    }
+    
 
     inputEvent (e) {
         // this.setState({ typedWord: e.target.value })
