@@ -4,6 +4,7 @@ import GameMenu from './GameMenu.jsx';
 import GameScore from './GameScore.jsx';
 import GameLives from './GameLives.jsx';
 import DvorakKeyboard from './DvorakKeyboard.jsx';
+import Spaceship from './spaceship'
 import './App.css';
 
 class App extends Component {
@@ -12,7 +13,9 @@ class App extends Component {
         return (
             <Container>
                 <Row className='h100'>
-                    <Col className='leftSide h100' style={{minHeight:'750px',marginRight:'40px'}}></Col>
+                    <Col className='leftSide h100' style={{paddingTop: '16px', marginRight:'40px',}}>
+                        <Spaceship />
+                    </Col>
                     <Col className='rightSide'>
                         <Row>
                             <Col><GameMenu/></Col>

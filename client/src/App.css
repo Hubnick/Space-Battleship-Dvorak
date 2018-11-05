@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   height: 100%;
-  
+
 }
 
 .App-logo {
@@ -38,7 +38,7 @@
   left: 45%;
   top: 45%;
   margin-top: 150px;
-  color: red;   
+  color: red;
   border: 3px solid yellow;
   border-radius: 15px;
   width: 12%;
@@ -85,8 +85,8 @@ body {
 
 /* Game box */
 .leftSide {
-  border: #282c34 4px solid;
-  background-color: whitesmoke;
+  /* border: #282c34 4px solid; */
+  /* background-color: whitesmoke; */
   /* background-image: url('/bg-right.jpeg'); */
   background-repeat: no-repeat;
   background-position: 0 0;
