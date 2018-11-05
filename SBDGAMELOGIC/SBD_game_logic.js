@@ -31,7 +31,7 @@ loadWordArray = function () {
 // (2) first word gets set
 
 loadWord = function () {
-    time = time
+    time = 10
     console.log("seconds left: " + time)
     word = wordArray[wordArrayCount]
     console.log("the current word is: " + word)

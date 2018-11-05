@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 //added import background video
 import BackgroundVideo from './BackgroundVideo.jsx';
@@ -20,7 +20,7 @@ const App = () => (
     </div>
   </Router>
 );
-
+  
 
 export default App;
 
