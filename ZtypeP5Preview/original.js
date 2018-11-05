@@ -11,9 +11,12 @@ var planetMantle; // color of mantle
 
 var ship; // color of ship
 
-function setup() {
+// background image
+var bg; 
+// var y = 0;
 
-    createCanvas(500, 500);
+function setup() {
+    // createCanvas(1000, 1500);
 
     planetCrust = randomColor();
     planetMantle = randomColor();
@@ -22,9 +25,22 @@ function setup() {
     field.push(new Asteroid(random(width - 150) + 75, 0, random(WORDS), randomColor()));
 
     focus = null;
+
+    bg = loadImage("./pic22.jpg");
+    createCanvas(640, 420);
+
 }
 
 function draw() {
+    background(bg);
+    
+    // stroke(226, 204, 0);
+    // line(0, y, width, y);
+
+    // y++;
+    // if (y > height) {
+    //     y = 0;
+    // }
 
     background(51);
 
@@ -33,6 +49,7 @@ function draw() {
     drawScore();
 
     handleField();
+    
 }
 
 /**

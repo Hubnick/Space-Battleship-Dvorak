@@ -130,3 +130,28 @@ margin-left: 10%;
   font-size: 25px;
 
 }
+
+#videoWrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 99;
+}
+#video_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+}
+
+.introLogoContainer{
+  position: absolute;
+  right:0;
+  top:0;
+  max-width: 400px;
+  margin: 50px;
+}

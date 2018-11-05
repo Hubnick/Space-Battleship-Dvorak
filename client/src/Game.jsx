@@ -24,9 +24,9 @@ class App extends Component {
                             <Col><GameScore/></Col>
                             <Col><GameLives/></Col>
                         </Row>
-                        <Row className=''>
+                        {/* <Row className=''>
                             <Col><hr/></Col>
-                        </Row>
+                        </Row> */}
                         <Row className=''>
                             <Col><DvorakKeyboard/></Col>
                         </Row>
