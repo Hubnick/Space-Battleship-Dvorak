@@ -6,6 +6,10 @@ import GameLives from './GameLives.jsx';
 import DvorakKeyboard from './DvorakKeyboard.jsx';
 import './App.css';
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 class App extends Component {
 
     render() {
@@ -21,9 +25,15 @@ class App extends Component {
                             <Col><GameScore/></Col>
                             <Col><GameLives/></Col>
                         </Row>
+<<<<<<< HEAD
+                        {/* <Row className=''>
+                            <Col><hr/></Col>
+                        </Row> */}
+=======
                         <Row className=''>
                             <Col><hr/></Col>
                         </Row>
+>>>>>>> master
                         <Row className=''>
                             <Col><DvorakKeyboard/></Col>
                         </Row>
