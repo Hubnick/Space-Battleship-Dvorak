@@ -7,6 +7,8 @@ mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/mern",
     {
         // useMongoClient: true
+        
+        // useMongoClient: true
         useNewUrlParser: true
     }
 );

@@ -8,6 +8,7 @@ import Game from './Game.jsx';
 // added button from reactstrap
 import { Button } from 'reactstrap';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+<<<<<<< HEAD
 
 
 const App = () => (
@@ -22,5 +23,31 @@ const App = () => (
   </Router>
 );
 
+=======
+
+const App = () => (
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={BackgroundVideo} />
+        <Route exact path="/game" component={Game} />
+        <Route component={BackgroundVideo} />
+      </Switch>
+    </div>
+  </Router>
+);
+  
+>>>>>>> master
 
 export default App;
+
+// class App extends Component {
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <Game></Game>  
+//       </div>
+//     );
+//   }
+// }
