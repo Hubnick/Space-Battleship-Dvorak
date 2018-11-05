@@ -8,22 +8,6 @@ import Game from './Game.jsx';
 // added button from reactstrap
 import { Button } from 'reactstrap';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-<<<<<<< HEAD
-
-
-const App = () => (
-  <Router>
-    <div>
-      <Switch>
-        <Route exact path="/" component={BackgroundVideo} />
-        <Route exact path="/game" component={Game} />
-        <Route component={BackgroundVideo} />
-      </Switch>
-    </div>
-  </Router>
-);
-
-=======
 
 const App = () => (
   <Router>
@@ -37,7 +21,6 @@ const App = () => (
   </Router>
 );
   
->>>>>>> master
 
 export default App;
 
