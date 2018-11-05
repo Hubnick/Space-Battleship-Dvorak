@@ -1,6 +1,5 @@
 import React from 'react'
 import { Spring, Keyframes, animated } from 'react-spring'
-import delay from 'delay'
 
 const SHIP = 'M20,0 L380,380 L380,380 L200,20 L20,380 Z'
 const DOT = 'M20,20 L20,80 L80,80 L80,20 L20,20 Z'
