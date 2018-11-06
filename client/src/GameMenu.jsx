@@ -8,46 +8,46 @@ import './App.css';
 // import './App.css';
 
 // class App extends Component {
-    // state = {
-    //     typedWord: '',
-    //     //WE USED ISPLAYING======
-    //     isPlaying: false
-    // }
+// state = {
+//     typedWord: '',
+//     //WE USED ISPLAYING======
+//     isPlaying: false
+// }
 
-    // constructor(props) {
-    //     super(props);
-    //     this.toggle = this.toggle.bind(this);
-    //     this.state = {
-    //         dropdownOpen: false
-    //     };
+// constructor(props) {
+//     super(props);
+//     this.toggle = this.toggle.bind(this);
+//     this.state = {
+//         dropdownOpen: false
+//     };
 
-    //     //WE USED AUDIO IN CONSTRUCTOR=====
-    //     //create audio object
-    //     this.audio = new Audio();
-    //     this.audio.src = "/introAudio.mp3";
-    // }
-    // toggle() {
-    //     this.setState({
-    //         dropdownOpen: !this.state.dropdownOpen
-    //     });
-    // }
+//     //WE USED AUDIO IN CONSTRUCTOR=====
+//     //create audio object
+//     this.audio = new Audio();
+//     this.audio.src = "/introAudio.mp3";
+// }
+// toggle() {
+//     this.setState({
+//         dropdownOpen: !this.state.dropdownOpen
+//     });
+// }
 
-    // setWord = (e) => {
-    //     this.setState({ typedWord: e.target.value })
-    // };
+// setWord = (e) => {
+//     this.setState({ typedWord: e.target.value })
+// };
 
-    //play/pause background music
+//play/pause background music
 
-    //WE USED TOGGLESOUND==================
-    // toggleSound = (e) => {
-    //     if (this.state.isPlaying) {
-    //         this.setState({ isPlaying: false })
-    //         this.audio.pause();
-    //     } else {
-    //         this.setState({ isPlaying: true })
-    //         this.audio.play()
-    //     }
-    // };
+//WE USED TOGGLESOUND==================
+// toggleSound = (e) => {
+//     if (this.state.isPlaying) {
+//         this.setState({ isPlaying: false })
+//         this.audio.pause();
+//     } else {
+//         this.setState({ isPlaying: true })
+//         this.audio.play()
+//     }
+// };
 
 //====================juego============================
 
@@ -84,16 +84,27 @@ class GameMenu extends Component {
         ["d", "h", "t", "n", "s"],
         ["a", "o", "e", "u", "i", "d", "h", "t", "n", "s"]
     ]
+    //  changeToDive = function(){
+    //     this.props.command('startDive');
+    // }
 
     inputEvent(e) {
-        // this.setState({ typedWord: e.target.value })
+        // this.setState({ typedWord: e.target.value })        
         let character = e.target.value
         console.log('inputEvent->', character, this.getWord())
         console.log('inputEvent->T/F', character === this.getWord())
-        if (character === this.getWord()) {
+        if (character.charAt(0) == this.getWord()) {
             console.log("its true")
 
             let newChallenge = this.state.currentChallenge + 1
+            this.props.command('destroy');
+            this.props.command('startDive');
+            //combine the two!!!!!!======================================
+
+            //========================look at this again=================================================
+            // setTimeout(function () { changeToDive() }, 500);
+
+
             console.log('inputEvent-varnewChallenge-before-setState->', newChallenge)
             this.setState({
                 currentChallenge: newChallenge
@@ -132,14 +143,13 @@ class GameMenu extends Component {
         //get current background from the state
         var currentBackground = this.state.currentBackground;
         //change the state
-        if(currentBackground < 5)
-        {
-            this.setState({currentBackground: currentBackground +1});
-        }else{
-            this.setState({currentBackground: 1});
+        if (currentBackground < 5) {
+            this.setState({ currentBackground: currentBackground + 1 });
+        } else {
+            this.setState({ currentBackground: 1 });
         }
         //apply the new background image to the body
-        document.body.style.backgroundImage = "url("+ "/bg" + this.state.currentBackground + ".jpg" + ")";
+        document.body.style.backgroundImage = "url(" + "/bg" + this.state.currentBackground + ".jpg" + ")";
     }
 
 

@@ -14,10 +14,19 @@ class Game extends Component {
         super(props);
         // this.toggle = this.toggle.bind(this);
         this.state = {
-            leftScreenCommand: ''
+            leftScreenCommand: 'upon page load'
         };
 
     }
+
+    changeCommand(something) {
+        this.setState({leftScreenCommand: something})
+    
+    }    
+    getCommand(){
+         this.setState({leftScreenCommand : this.state.leftScreenCommand});
+    }
+
 
 
 
@@ -26,11 +35,14 @@ class Game extends Component {
             <Container>
                 <Row className='h100'>
                     <Col className='leftSide h100' style={{ paddingTop: '16px', marginRight: '40px', }}>
-                        <Spaceship />
+                        <Spaceship 
+                        leftScreenCommand = {this.getCommand}/>
                     </Col>
                     <Col className='rightSide'>
                         <Row>
-                            <Col><GameMenu /></Col>
+                            <Col><GameMenu 
+                            command={this.changeCommand.bind(this)}/>
+                            </Col>
                         </Row>
                         <Row>
                             <Col><GameScore /></Col>

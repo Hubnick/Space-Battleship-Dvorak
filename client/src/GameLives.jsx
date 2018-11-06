@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Alert } from 'reactstrap';
 import './App.css';
 
-class App extends Component {
+class GameLives extends Component {
   
   render() {
     
@@ -15,4 +15,4 @@ class App extends Component {
 }
   
 
-export default App;
+export default GameLives;
