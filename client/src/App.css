@@ -162,14 +162,18 @@ h1 {
 .rowToggleSound{
   text-align: center !important;
   margin-top:50px;
-  color: rgba(255, 255, 0, 0.418);
   
+}
+.rowToggleSound label{
+  color: rgba(255, 255, 255, 0.644);
+  background-color: rgba(8, 8, 0, 0.651) !important;
+
 }
 .rowBackgroundButton{
   text-align: center !important;
   margin-top:50px;
 }
 .btnChangeBackground{
-  background-color: rgba(255, 255, 0, 0.671) !important;
-  color: black !important;
+  background-color: rgba(8, 8, 0, 0.747) !important;
+  color: rgba(255, 255, 255, 0.61) !important;
 }
