@@ -63,7 +63,10 @@ class GameMenu extends Component {
             currentlevel: 0,
             currentChallenge: 0,
             isPlaying: false,
-            currentBackground: 5
+            currentBackground: 5,
+            character: '',
+            inputValue: ''
+
         };
         this.audio = new Audio();
         this.audio.src = "/introAudio.mp3";
@@ -87,20 +90,33 @@ class GameMenu extends Component {
 
     inputEvent(e) {
         // this.setState({ typedWord: e.target.value })
-        let character = e.target.value
-        console.log('inputEvent->', character, this.getWord())
-        console.log('inputEvent->T/F', character === this.getWord())
-        if (character === this.getWord()) {
-            console.log("its true")
+        // const currentGetWord = this.getWord()
+        // let character = e.target.value
+        this.setState({character: e.target.value})
+        this.setState({inputValue: e.target.value})
 
-            let newChallenge = this.state.currentChallenge + 1
+
+
+        // console.log('inputEvent->', this.state.character, currentGetWord)
+        // console.log(currentGetWord)
+        // console.log('inputEvent->T/F', this.state.character === currentGetWord)
+
+
+        if (this.state.character === this.getWord()) {
+            // currentGetWord)  {
+            console.log("its true");
+
+            let newChallenge = this.state.currentChallenge + 1;
+            this.setState({inputValue: ''});
             console.log('inputEvent-varnewChallenge-before-setState->', newChallenge)
             this.setState({
                 currentChallenge: newChallenge
-            })
-            console.log('inputEvent-statecurrentChallenge-AfterSetState', this.state.currentChallenge)
+            });
+            console.log('inputEvent-statecurrentChallenge-AfterSetState', this.state.currentChallenge);
             console.log('inputEvent-newChallenge-aftersetSTate', newChallenge)
+            this.setState({character: ''});
         }
+
     };
     /**
      * This returns a word from the array according the number provided. If no 
@@ -108,6 +124,7 @@ class GameMenu extends Component {
      * @param {*} e represents the value of the array where the letter is located
      */
     getWord(e) {
+        
         if (e) {
             return this.levelsArray[this.state.currentlevel][e]
         } else {
@@ -176,7 +193,7 @@ class GameMenu extends Component {
                 </Row> */}
 
 
-                        <Input onChange={(e) => this.inputEvent(e)} type="text" id="textTypedWord" placeholder="Start typing..." />
+                        <Input onChange={(e) => this.inputEvent(e)} type="text" id="textTypedWord" placeholder="Start typing..." value={this.state.inputValue} />
                     </Col>
                 </Row>
 
@@ -211,7 +228,7 @@ export default GameMenu;
 
 // import React, { Component } from 'react';
 // import { Row, Col, CustomInput, Input } from 'reactstrap';
-// import './App.css';
+// import './App.css
 
 // class App extends Component {
 
