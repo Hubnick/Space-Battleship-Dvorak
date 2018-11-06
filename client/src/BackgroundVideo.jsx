@@ -3,7 +3,7 @@ import './App.css';
 import { Link } from "react-router-dom";
 
 
-class App extends Component {
+class BackgroundVideo extends Component {
   
   render() {
     return (
@@ -27,5 +27,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default BackgroundVideo;
 

@@ -108,17 +108,19 @@ h1 {
 }
 
 .keyboard {
-  margin-top: 25px;
   position: relative;
-  top:10%;
-  left:18%;
+  text-align: center;
+  background: rgba(255, 0, 0, 0.7);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
 }
 
 #textTypedWord {
   width: 80%;
   height: 50px;
   border: double;
-margin-left: 10%;
+  margin-left: 10%;
   /* margin-top: -25px; */
   font-size: 25px;
   text-align: center;
@@ -128,6 +130,7 @@ margin-left: 10%;
 #typedWord {
   /* margin-top: -25px; */
   font-size: 25px;
+  margin-top: 145px !important;
 
 }
 
@@ -154,4 +157,23 @@ margin-left: 10%;
   top:0;
   max-width: 400px;
   margin: 50px;
+}
+
+.rowToggleSound{
+  text-align: center !important;
+  margin-top:50px;
+  
+}
+.rowToggleSound label{
+  color: rgba(255, 255, 255, 0.644);
+  background-color: rgba(8, 8, 0, 0.651) !important;
+
+}
+.rowBackgroundButton{
+  text-align: center !important;
+  margin-top:50px;
+}
+.btnChangeBackground{
+  background-color: rgba(8, 8, 0, 0.747) !important;
+  color: rgba(255, 255, 255, 0.61) !important;
 }

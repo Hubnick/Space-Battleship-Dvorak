@@ -7,28 +7,52 @@ import DvorakKeyboard from './DvorakKeyboard.jsx';
 import Spaceship from './spaceship'
 import './App.css';
 
-class App extends Component {
+
+
+class Game extends Component {
+    constructor(props) {
+        super(props);
+        // this.toggle = this.toggle.bind(this);
+        this.state = {
+            leftScreenCommand: 'upon page load'
+        };
+
+    }
+
+    changeCommand(something) {
+        this.setState({leftScreenCommand: something})
+    
+    }    
+    getCommand(){
+         this.setState({leftScreenCommand : this.state.leftScreenCommand});
+    }
+
+
+
 
     render() {
         return (
             <Container>
                 <Row className='h100'>
-                    <Col className='leftSide h100' style={{paddingTop: '16px', marginRight:'40px',}}>
-                        <Spaceship />
+                    <Col className='leftSide h100' style={{ paddingTop: '16px', marginRight: '40px', }}>
+                        <Spaceship 
+                        leftScreenCommand = {this.getCommand}/>
                     </Col>
                     <Col className='rightSide'>
                         <Row>
-                            <Col><GameMenu/></Col>
+                            <Col><GameMenu 
+                            command={this.changeCommand.bind(this)}/>
+                            </Col>
                         </Row>
                         <Row>
-                            <Col><GameScore/></Col>
-                            <Col><GameLives/></Col>
+                            <Col><GameScore /></Col>
+                            <Col><GameLives /></Col>
                         </Row>
                         {/* <Row className=''>
                             <Col><hr/></Col>
                         </Row> */}
                         <Row className=''>
-                            <Col><DvorakKeyboard/></Col>
+                            <Col><DvorakKeyboard /></Col>
                         </Row>
                     </Col>
                 </Row>
@@ -38,4 +62,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default Game;
