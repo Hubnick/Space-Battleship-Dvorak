@@ -24,7 +24,7 @@ const Container = Keyframes.Spring(async next => {
   }
 })
 
-export default class Asteroid extends React.Component {
+export default class Spaceship extends React.Component {
   state = { destroy: true, reset: false, value: undefined}
   destroy = () => this.setState(state => ({ destroy: false }))
   undestroy = () => this.setState(state => ({ reset: !state.reset, destroy: true }))
