@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import { Row, Col, CustomInput, Input, Button } from 'reactstrap';
+import './App.css';
+// import $ from 'jquery';
 
 //=====================audio======================
 // import { Row, Col, CustomInput } from 'reactstrap';
@@ -49,8 +51,6 @@ import React, { Component } from 'react';
 
 //====================juego============================
 
-import { Row, Col, CustomInput, Input } from 'reactstrap';
-import './App.css';
 
 
 class GameMenu extends Component {
@@ -62,7 +62,8 @@ class GameMenu extends Component {
         this.state = {
             currentlevel: 0,
             currentChallenge: 0,
-            isPlaying: false
+            isPlaying: false,
+            currentBackground: 5
         };
         this.audio = new Audio();
         this.audio.src = "/introAudio.mp3";
@@ -126,11 +127,20 @@ class GameMenu extends Component {
         }
     };
 
-
-
-
-
-
+    //change the background
+    changeBackground = (e) => {
+        //get current background from the state
+        var currentBackground = this.state.currentBackground;
+        //change the state
+        if(currentBackground < 5)
+        {
+            this.setState({currentBackground: currentBackground +1});
+        }else{
+            this.setState({currentBackground: 1});
+        }
+        //apply the new background image to the body
+        document.body.style.backgroundImage = "url("+ "/bg" + this.state.currentBackground + ".jpg" + ")";
+    }
 
 
     render() {
@@ -141,11 +151,15 @@ class GameMenu extends Component {
                     <img src="./logo4b.png" alt="" style={{ maxWidth: '400px' }} />
                 </div>
                 <Row>
-                    <Col>
+                    <Col className="rowToggleSound">
                         <CustomInput onClick={(e) => this.toggleSound(e)} type="checkbox" id="soundCheckbox" label="Sound On-Off" />
                     </Col>
                 </Row>
-
+                <Row>
+                    <Col className='rowBackgroundButton'>
+                        <Button className='btnChangeBackground' onClick={(e) => this.changeBackground(e)}>Change Background</Button>
+                    </Col>
+                </Row>
 
                 <Row>
                     <Col>
