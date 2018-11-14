@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, CustomInput, Input, Button } from 'reactstrap';
 import './App.css';
+import GameInputBox from './GameInputBox';
 // import $ from 'jquery';
 
 //=====================audio======================
@@ -186,7 +187,7 @@ class GameMenu extends Component {
                 </Row> */}
 
 
-                        <Input onChange={(e) => this.inputEvent(e)} type="text" id="textTypedWord" placeholder="Start typing..." />
+                        <GameInputBox  event={(e) => this.inputEvent(e)} />
                     </Col>
                 </Row>
 
